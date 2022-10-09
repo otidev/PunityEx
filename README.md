@@ -25,7 +25,7 @@ On an average machine, a game [33 grams](https://martincohen.itch.io/33-grams) u
 - Perfect for simple pixel art with only 255 colors (0 reserved for transparency)!
 - No need to worry about 8 bits of transparency, because you just get one!
 - Optionaly limited to 30 frames per second that gives you them retro feels!
-- Fuck other platforms, **Windows** is where it's at! (see **Planned features** for more platforms)
+- F\*\*k other platforms, **Windows** is where it's at! (see **Planned features** for more platforms)
 
 ## Goals
 
