@@ -1205,6 +1205,21 @@ typedef struct KeyMapping {
 
 extern KeyMapping KEY_MAPPING[];
 
+typedef struct _Vec2 {
+    f32 x, y;
+}
+Vec2;
+
+Vec2 createvec2_(f32 x, f32 y);
+Vec2 createvec2fromse_(SceneEntity e);
+
+typedef struct _Line {
+    Vec2 start_point, end_point;
+}
+Line;
+
+float getlinedir_(Line line);
+
 // TODO:
 // #if PUN_USE_SHORT_NAMES
 // #define entity_add pun_entity_add
@@ -3166,6 +3181,28 @@ key_clear()
 {
     memset(&CORE->key_deltas, 0, PUN_KEYS_MAX);
 }
+
+//
+// Vec2
+//
+
+Vec2 createvec2_(f32 x, f32 y) {
+    return (Vec2){x, y};
+}
+
+Vec2 createvec2fromse_(SceneEntity e) {
+    return createvec2_(e.rx, e.ry);
+}
+
+//
+// Line
+//
+
+float getlinedir_(Line line) {
+    float value = (atan2(line.end_point.y - line.start_point.y, line.end_point.x - line.start_point.x) * 180) / M_PI;
+    return (value > 0) ? value : (value + 360);
+}
+
 
 //
 // World
